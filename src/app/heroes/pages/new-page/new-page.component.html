@@ -5,10 +5,15 @@
     <div class="col-12 sm:col-6">
         <mat-card>
             <mat-card-content>
-                <div class="grid">
+                <form
+                    (ngSubmit)="onSubmit()"
+                    [formGroup]="heroForm"
+                    class="grid"
+                >
                     <mat-form-field class="col-12 sm:col-6">
                         <mat-label>Super Heroe</mat-label>
                         <input
+                            [formControlName]="'superhero'"
                             placeholder="tesr"
                             matInput
                             type="text"
@@ -21,6 +26,7 @@
                             placeholder="tesr"
                             matInput
                             type="text"
+                            [formControlName]="'alter_ego'"
                             required
                         >
                     </mat-form-field>
@@ -30,6 +36,7 @@
                             placeholder="tesr"
                             matInput
                             type="text"
+                            [formControlName]="'first_appearance'"
                             required
                         >
                     </mat-form-field>
@@ -39,12 +46,16 @@
                             placeholder="tesr"
                             matInput
                             type="text"
+                            [formControlName]="'characters'"
                             required
                         >
                     </mat-form-field>
                     <mat-form-field class="col-12">
                         <mat-label>Creador</mat-label>
-                        <mat-select required>
+                        <mat-select
+                            [formControlName]="'publisher'"
+                            required
+                        >
                             <mat-option
                                 *ngFor="let publisher of publishers"
                                 [value]="publisher.id"
@@ -52,7 +63,27 @@
                                 {{publisher.desc}}
                             </mat-option>
                         </mat-select>
+
+
+
+
                     </mat-form-field>
+                    <mat-form-field class="col-12 ">
+                        <mat-label>Alternative Image</mat-label>
+                        <input
+                            placeholder="tesr"
+                            matInput
+                            type="text"
+                            [formControlName]="'alt_image'"
+                            required
+                        >
+                    </mat-form-field>
+
+
+
+
+
+
                     <button
                         mat-flat-button
                         color="warn"
@@ -67,7 +98,7 @@
                         <mat-icon>save</mat-icon>
                         Guardar
                     </button>
-                </div>
+                </form>
             </mat-card-content>
         </mat-card>
     </div>
@@ -78,6 +109,15 @@
                 alt="Imagen del Heroe"
             >
         </mat-card>
+
+
+
+
+
+
+
+
+
 
 
 

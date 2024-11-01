@@ -27,4 +27,10 @@ export class NewPageComponent {
       id: 'Marvel Commi', desc: 'DC - Comics'
     }
   ]
+
+  onSubmit(): void {
+    console.log({
+      isValid: this.heroForm.valid
+    })
+  }
 }
