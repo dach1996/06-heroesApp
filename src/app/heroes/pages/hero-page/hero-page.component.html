@@ -5,13 +5,21 @@
         </mat-grid-tile>
     </mat-grid-list>
 </ng-template>
-<div *ngIf="hero; else divLoading" class="grid p-2">
+<div
+    *ngIf="hero; else divLoading"
+    class="grid p-2"
+>
     <mat-card class="col-12 sm:col-6">
         <mat-card-header>
             <mat-card-title>{{hero.alter_ego}}</mat-card-title>
             <mat-card-subtitle>{{hero.superhero}}</mat-card-subtitle>
         </mat-card-header>
-        <img title="test" [src]="hero|heroImagePipe" [alt]="hero.superhero" mat-card-image>
+        <img
+            title="test"
+            [src]="hero|heroImagePipe"
+            [alt]="hero.superhero"
+            mat-card-image
+        >
     </mat-card>
     <mat-card class="col-12 sm:col-6">
         <mat-card-header>
@@ -25,7 +33,14 @@
                 <mat-list-item>{{hero.characters}}</mat-list-item>
                 <mat-list-item>{{hero.alter_ego}}</mat-list-item>
             </mat-list>
-            <button title="test" mat-button color="warm" (click)="goBack()">Regresar</button>
+            <button
+                title="test"
+                mat-button
+                color="warm"
+                (click)="goBack()"
+            >
+                Regresar
+            </button>
         </mat-card-content>
     </mat-card>
 </div>
