@@ -64,11 +64,6 @@
                             </mat-option>
                         </mat-select>
 
-
-
-
-
-
                     </mat-form-field>
                     <mat-form-field class="col-12 ">
                         <mat-label>Alternative Image</mat-label>
@@ -109,7 +104,7 @@
     <div class="col-12 sm:col-6">
         <mat-card>
             <img
-                [src]="currentHero.alt_image"
+                [src]="currentHero | heroImagePipe"
                 alt="Imagen del Heroe"
             >
         </mat-card>
